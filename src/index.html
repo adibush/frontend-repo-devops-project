@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Hotel Reservation System</h1>
+
+        <section class="card">
+            <h2>New Reservation</h2>
+
+            <form id="reservationForm">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="hotel">Hotel</label>
+                <select id="hotel" name="hotelId" required>
+                    <option value="">Loading hotels...</option>
+                </select>
+
+                <label for="checkIn">Check-In</label>
+                <input type="date" id="checkIn" name="checkIn" required>
+
+                <label for="checkOut">Check-Out</label>
+                <input type="date" id="checkOut" name="checkOut" required>
+
+                <button type="submit">Reserve</button>
+            </form>
+
+            <p id="reservationMessage" class="message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Reservation Lookup</h2>
+
+            <form id="lookupForm">
+                <label for="reservationId">Reservation ID</label>
+                <input type="text" id="reservationId" name="reservationId" required>
+
+                <button type="submit">Search</button>
+            </form>
+
+            <p id="lookupMessage" class="message"></p>
+
+            <div id="reservationDetails" class="details hidden">
+                <p><strong>Reservation ID:</strong> <span id="detailId"></span></p>
+                <p><strong>Full Name:</strong> <span id="detailFullName"></span></p>
+                <p><strong>Email:</strong> <span id="detailEmail"></span></p>
+                <p><strong>Hotel ID:</strong> <span id="detailHotelId"></span></p>
+                <p><strong>Check-In:</strong> <span id="detailCheckIn"></span></p>
+                <p><strong>Check-Out:</strong> <span id="detailCheckOut"></span></p>
+
+                <button id="cancelButton" type="button">Cancel Reservation</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="confirmationModal" class="modal-overlay hidden">
+        <div class="modal">
+            <h2>Confirm Reservation</h2>
+
+            <div class="details">
+                <p><strong>Full Name:</strong> <span id="confirmFullName"></span></p>
+                <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
+                <p><strong>Hotel:</strong> <span id="confirmHotelName"></span></p>
+                <p><strong>Check-In:</strong> <span id="confirmCheckIn"></span></p>
+                <p><strong>Check-Out:</strong> <span id="confirmCheckOut"></span></p>
+            </div>
+
+            <p id="confirmationMessage" class="message"></p>
+
+            <div class="modal-actions">
+                <button id="modalCancelButton" class="secondary-button" type="button">Cancel</button>
+                <button id="confirmButton" type="button">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
