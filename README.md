@@ -15,3 +15,4 @@ docker build -t hotel-frontend:v1 .
 ```bash
 docker run -d --name hotel-frontend -p 8080:80 hotel-frontend:v1
 ```
+# Trigger Frontend Pipeline 2 Sat Jul 25 19:15:08     2026
