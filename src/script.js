@@ -140,14 +140,14 @@ lookupForm.addEventListener("submit", async function (event) {
     clearMessage(lookupMessage);
     reservationDetails.classList.add("hidden");
 
-    const reservationId = document.getElementById("reservationId").value.trim();
+    const reservationSearch = document.getElementById("reservationId").value.trim();
 
     try {
-        const response = await fetch(API_URL + "/reservation/" + reservationId);
+        const response = await fetch(API_URL + "/reservation/" + encodeURIComponent(reservationSearch));
         const result = await response.json();
 
         if (response.ok) {
-            currentReservationId = reservationId;
+            currentReservationId = result._id;
 
             document.getElementById("detailId").textContent = result._id;
             document.getElementById("detailFullName").textContent = result.fullName;
