@@ -17,14 +17,14 @@ The frontend allows users to create hotel reservations, search for existing rese
 
 ```text
 frontend-repo-devops-project/
-├── .github/
-│   └── workflows/
-├── src/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-├── Dockerfile
-└── README.md
+|-- .github/
+|   `-- workflows/
+|-- src/
+|   |-- index.html
+|   |-- style.css
+|   `-- script.js
+|-- Dockerfile
+`-- README.md
 ```
 
 ## Features
